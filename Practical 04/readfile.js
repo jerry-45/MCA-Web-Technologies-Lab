@@ -1,3 +1,3 @@
-var fss=require("fs");
-var data=fss.readFileSync('input.txt');
+var fs=require("fs");
+var data=fs.readFileSync('input.txt');
 console.log(data.toString());
