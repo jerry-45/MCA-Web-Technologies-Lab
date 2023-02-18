@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Angular JS Currency Filter</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    </head>
+    <body ng-app>
+        <div>
+            Enter price: <input type="number" ng-model="number"><br>
+            The price is {{number | currency:' Rs':'2'}}
+        </div>
+    </body>
+</html>

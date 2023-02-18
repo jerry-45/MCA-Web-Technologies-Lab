@@ -1,0 +1,33 @@
+<html>
+<!--Understanding to take one value out of many by using ng-switch----->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body ng-app="">
+
+<form>
+  Pick a topic:
+  <input type="radio" ng-model="myVar" value="MCA">MCA
+  <input type="radio" ng-model="myVar" value=" MBA">MBA
+  <input type="radio" ng-model="myVar" value=" MMS">MMS
+
+</form>
+
+<div ng-switch="myVar">
+  <div ng-switch-when="MCA">
+     <h1>MCA </h1>
+     <p>Welcome to a world of MCA. It is now two years course</p>
+  </div>
+  <div ng-switch-when="MBA">
+     <h1>MBA</h1>
+     <p>Welcome to a world of MBA. You can do it with many specializations</p>
+  </div>
+  <div ng-switch-when="MMS">
+     <h1>MMS</h1>
+     <p>Welcome to a world of MMS. You can do it with many specializations</p>
+  </div>
+</div>
+
+<p>We used ng-switch directive hides 
+and shows HTML sections depending on the value of the radio buttons.</p>
+
+</body>
+</html>

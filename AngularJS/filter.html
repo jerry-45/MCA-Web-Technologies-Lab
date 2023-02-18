@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Angular JS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    </head>
+    <body ng-app>
+        Enter subject: <input type = "text" ng-model = "subjectName">
+        Subject:
+        <ul>
+           <li ng-repeat = "subject in student.subjects | filter: subjectName">
+              {{ subject.name + ', marks:' + subject.marks }}
+           </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>AngularJs Form</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+<script type="text/javascript">
+
+var app = angular.module('formApp', []);
+
+app.controller('formCtrl', function ($scope) {
+
+$scope.sendForm = function () {
+   
+$scope.msg = "Form Submitted Successfully";
+
+};
+
+});
+
+</script>
+
+</head>
+
+<body>
+    
+<div ng-app="formApp" ng-controller="formCtrl">
+
+<form name="personForm" ng-submit="sendForm()">
+
+First Name:<input type="text" name="firstname" ng-model="person.fname" required />
+
+<span ng-show="personForm.firstname.$error.required">Required!</span> <br /><br />
+
+Last Name:<input type="text" name="lastname" ng-model="person.lname" required />
+
+<span ng-show="personForm.lastname.$error.required"> Required! </span> <br /><br />
+
+<!----using radio buttons-->
+Pick a topic:
+  <input type="radio" ng-model="myVar" value="MCA">MCA
+  <input type="radio" ng-model="myVar" value=" MBA">MBA
+  <input type="radio" ng-model="myVar" value=" MMS">MMS
+</br>
+
+<!--using select option-->
+Select a City:
+  <select ng-model="myVal" >
+    <option value="">
+    <option value="Mumbai">Mumbai
+    <option value="Pune">Pune
+    <option value="Nashik">Nashik
+  </select>
+
+<button type="submit">Submit Form</button><br /><br />
+
+<!---message on the same page-->
+ <span ng-bind="person.fname"></span>
+ <span ng-bind="person.lname"></span>
+  <span>{{msg}}</span>
+</form>
+
+</div>
+</body>
+</html>
