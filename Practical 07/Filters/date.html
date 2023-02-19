@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>filters in angular js</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="gfgApp" ng-controller="dateCntrl">
+            <p>{{ today | date : "dd.MM.y" }}
+            <br>
+            full date is {{ today | date : "EEEE,MMMM d,y" }}
+            <br>
+            The time is {{today | date:'h:mm a z'}}
+            </p>
+        </div>
+        
+        <script>
+            var app = angular.module('gfgApp', []);
+            app.controller('dateCntrl', function($scope) {
+                $scope.today = new Date();
+                today: number = Date.now();
+            });
+        </script>
+    </body>
+</html>

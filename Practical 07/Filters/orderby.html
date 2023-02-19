@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Angular order by Filter Example</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script>
+            var app = angular.module("myapp", []);
+            app.controller("customerctrl", function($scope) {
+                $scope.customersArray = ["Rahul","Simran","Urvashi","Lekha","Rohit","Deepak"]
+            })
+        </script>
+    </head>
+    <body ng-app="myapp">
+        <h1 align="center">AngularJs Orderby Filter Example</h1>
+        <table ng-controller="customerctrl" border="1" align="center">
+            <tr ng-repeat="customer in customersArray | orderBy:customer:false">
+                <td>{{customer}}</td>
+            </tr>
+        </table>
+    </body>
+</html>
