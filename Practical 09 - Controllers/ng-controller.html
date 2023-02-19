@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>
+Program for many controller
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+</script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="mycontroller">
+Enteryour msg:<input type="text" ng-model ="message"></br>
+<button ng-click="showmsg(message)">click me</button>
+</div>
+</script>
+</head>
+<body ng-app="myapp">
+<div id = "div1" ng-controller="mycontroller">
+message 1 :{{message}}</br>
+<div id="div2">
+message 1.1:{{message}}
+</div>
+</div>
+<div id= "div3">
+message 2 : {{
+<div id= "div3">
+message 2 : {{message}}
+</div>
+<div id="div4" ng-controller="anothercontroller">
+message 3 : {{message}}
+</div>
+<script>
+var app = angular.module('myapp',[]);
+app.controller('mycontroller', function($scope){
+$scope.message= "this is my my controller";
+});
+app.controller('anothercontroller', function($scope){
+$scope.message="this is my anothercotroller";
+});
+</script>
+</body> </html>

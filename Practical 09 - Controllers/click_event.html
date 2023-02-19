@@ -1,0 +1,22 @@
+<html>
+<!----------understanding controller by click event-->
+<head>
+<title>Angulasjs Controller</title>
+<script src="angular-min.js"></script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="mycontroller">
+Enter Message :<input type="text" ng-model="message">
+<button ng-click="showmsg(message)">Click Me!!</button>
+</div>
+<script>
+var app= angular.module('myapp',[]);
+app.controller('mycontroller',function($scope){
+$scope.message="";
+$scope.showmsg=function(message){
+alert(message);
+};
+})
+</script>
+</body>
+</html>
