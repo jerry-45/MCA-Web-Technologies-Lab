@@ -1,33 +1,35 @@
 <html>
-<head>
-<title>AngualrJS Controller</title>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-</head>
-<body>
-<h2>Attach functions or behavior with arguments - AngularJS</h2>
-<div ng-app="app" ng-controller="myController">
-Click
-<button ng-click="Preference('English')">English</button>
-<button ng-click="Preference('Hindi')">Hindi</button>
-<button ng-click="Preference('Spanish')">Spanish</button>
-<button ng-click="Preference('English')">English</button>
-<button ng-click="Preference('Hindi')">Hindi</button>
-<button ng-click="Preference('Spanish')">Spanish</button>
-<button ng-click="Preference1('French','and Hindi language also.')">French</button>
-<p>I like {{ Language}} language {{ Language1 }} </p>
-</div>
-<script>
-var app = angular.module('app', []);
-app.controller('myController', ['$scope', function($scope) {
-$scope.Language = 'Hindi';
-$scope.Preference = function(lang) {
-$scope.Language = lang;
-};
-$scope.Preference1 = function(lang, lang1) {
-$scope.Language = lang;
-$scope.Language1 = lang1;
-};
-}]);
-</script>
-</body>
+    <head>
+        <title>AngualrJS Controller</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+        <h2>Attach functions or behavior with arguments - AngularJS</h2>
+        <div ng-app="app" ng-controller="myController">
+            Click
+            <button ng-click="Preference('English')">English</button>
+            <button ng-click="Preference('Hindi')">Hindi</button>
+            <button ng-click="Preference('Spanish')">Spanish</button>
+            <button ng-click="Preference('English')">English</button>
+            <button ng-click="Preference('Hindi')">Hindi</button>
+            <button ng-click="Preference('Spanish')">Spanish</button>
+            <button ng-click="Preference1('French','and Hindi language also.')">French</button>
+            <p>I like {{ Language}} language {{ Language1 }} </p>
+        </div>
+
+        <script>
+            var app = angular.module('app', []);
+            app.controller('myController', ['$scope', function($scope) {
+                $scope.Language = 'Hindi';
+                $scope.Preference = function(lang) {
+                    $scope.Language = lang;
+                };
+            
+                $scope.Preference1 = function(lang, lang1) {
+                    $scope.Language = lang;
+                    $scope.Language1 = lang1;
+                };
+            }]);
+        </script>
+    </body>
 </html>
